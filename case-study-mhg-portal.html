@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MHG Portal — Custom Letting Agency App | Cesto Technologies</title>
+<meta name="description" content="A custom Next.js operations portal built for More Homes Group — role-based access, OTP login, an integrated SIP dialer, and full audit governance.">
+<link rel="canonical" href="https://www.cestotechnologies.com/case-study-mhg-portal.html">
+<meta name="theme-color" content="#05080e">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cesto Technologies">
+<meta property="og:title" content="MHG Portal — Custom Letting Agency App | Cesto Technologies">
+<meta property="og:description" content="A custom Next.js operations portal built for More Homes Group — role-based access, OTP login, an integrated SIP dialer, and full audit governance.">
+<meta property="og:url" content="https://www.cestotechnologies.com/case-study-mhg-portal.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Entry animations are applied only when JS is available, so the page can never
+     render blank if a script is blocked or fails. Must stay before the body. -->
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="page-portfolio">
+
+<div class="ambient-glow" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="header" id="header" data-header>
+
+  <!-- primary bar -->
+  <div class="header__bar">
+    <div class="shell header__row">
+      <a class="logo" href="index.html" aria-label="Cesto Technologies — home">
+        <img class="logo__img" src="assets/img/logo.png" alt="Cesto Technologies">
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <span class="nav__pill" aria-hidden="true"></span>
+        <ul class="nav__list">
+          <li><a class="nav__link " href="index.html">Home</a></li>
+          <li><a class="nav__link " href="about.html">About</a></li>
+          <li class="nav__item nav__item--mega" data-mega>
+            <a class="nav__link nav__link--has-child " href="services.html" aria-expanded="false" aria-haspopup="true">
+              Services
+              <svg class="nav__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+            </a>
+
+            <div class="mega" data-mega-panel>
+              <div class="shell mega__inner">
+                <div class="mega__cats">
+                  <div class="mega__col">
+                    <div class="mega__cat">
+                      <a class="mega__cat-title" href="service-seo.html">Search Engine Optimization</a>
+                      <ul class="mega__cat-list">
+                        <li><a href="service-local-seo.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.2s7-5.6 7-11.1a7 7 0 1 0-14 0c0 5.5 7 11.1 7 11.1Z"/><circle cx="12" cy="10" r="2.6"/></svg> Local SEO</a></li>
+                        <li><a href="service-google-map-optimization.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="m15.2 8.8-1.8 4.6-4.6 1.8 1.8-4.6 4.6-1.8Z"/></svg> Google Map Optimization</a></li>
+                        <li><a href="service-local-citation.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3.2H7a2 2 0 0 0-2 2v13.6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.2L14 3.2Z"/><path d="M13.8 3.4V8.4H18.8"/><path d="M8.6 13h6.8M8.6 16.4h4.6"/></svg> Local Business Citation</a></li>
+                        <li><a href="service-landing-page-optimization.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 17.4a9 9 0 1 1 15.6 0"/><path d="m12 12.8 3.6-3.6"/><circle cx="12" cy="14" r="1.4"/></svg> Landing Page Optimization</a></li>
+                        <li><a href="service-technical-seo.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3.5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z"/><path d="m20.5 20.5-5-5"/><path d="M7.8 12.8v-2.1m2.7 2.1V8.9m2.7 3.9v-2.9"/></svg> Technical SEO</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="mega__col">
+                    <div class="mega__cat">
+                      <a class="mega__cat-title" href="service-sem.html">Search Engine Marketing</a>
+                      <ul class="mega__cat-list">
+                        <li><a href="service-ppc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1"/></svg> Pay Per Click Advertising</a></li>
+                        <li><a href="service-google-ads.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1"/><path d="m14.6 9.4 5.2-5.2M17 4.2h2.8V7"/></svg> Google Ads</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega__cat">
+                      <a class="mega__cat-title" href="service-web-development.html">Web Design &amp; Development</a>
+                      <ul class="mega__cat-list">
+                        <li><a href="service-wordpress.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 9.6h16.8M3.6 14.4h16.8"/><path d="M12 3.4c2.4 2.4 3.7 5.4 3.7 8.6s-1.3 6.2-3.7 8.6c-2.4-2.4-3.7-5.4-3.7-8.6S9.6 5.8 12 3.4Z"/></svg> Wordpress Development</a></li>
+                        <li><a href="service-shopify.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 10.2a2 2 0 0 1-2 1.8H8.3a2 2 0 0 1-2-1.8L5.2 8.2Z"/><path d="M8.9 8.2a3.1 3.1 0 0 1 6.2 0"/><path d="M9.6 11.6v1.2a2.4 2.4 0 0 0 4.8 0v-1.2"/></svg> Shopify Development</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="mega__col">
+                    <div class="mega__cat">
+                      <a class="mega__cat-title" href="service-social-media-marketing.html">Social Media Marketing</a>
+                      <ul class="mega__cat-list">
+                        <li><a href="service-smm.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 10.9v8.2H4.4a1.1 1.1 0 0 1-1.1-1.1v-6a1.1 1.1 0 0 1 1.1-1.1h2.4Z"/><path d="m6.8 11.1 3.8-6.8a2 2 0 0 1 3 2l-1 3.7h5a2 2 0 0 1 2 2.4l-1.1 5a2 2 0 0 1-2 1.6H6.8"/></svg> Social Media Management</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega__cat">
+                      <a class="mega__cat-title" href="service-crm-development.html">Marketing Automation</a>
+                      <ul class="mega__cat-list">
+                        <li><a href="service-crm-development.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.4 19.4a5.6 5.6 0 0 1 11.2 0"/><circle cx="17.2" cy="8.6" r="2.5"/><path d="M16.2 13.8a4.9 4.9 0 0 1 4.4 5"/></svg> CRM Development</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega__cat">
+                      <a class="mega__cat-title" href="service-app-development.html">Software Development</a>
+                      <ul class="mega__cat-list">
+                        <li><a href="service-app-development.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m8.4 7.8-4.2 4.2 4.2 4.2"/><path d="m15.6 7.8 4.2 4.2-4.2 4.2"/><path d="m13.6 5.2-3.2 13.6"/></svg> App Development</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a class="nav__link is-active" href="portfolio.html">Portfolio</a></li>
+          <li><a class="nav__link " href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--primary btn--sm header__cta" href="contact.html#consultation">
+          Start a project
+          <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h15m-6.2-6.2L19.5 12l-6.2 6.2"/></svg>
+        </a>
+        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <span class="header__progress" id="progress" aria-hidden="true"></span>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__head">
+    <span class="drawer__label">Menu</span>
+    <button class="drawer__close" id="drawerClose" type="button" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+
+  <nav class="drawer__nav" aria-label="Mobile">
+    <ul class="drawer__list">
+      <li><a class="drawer__link " href="index.html">Home</a></li>
+      <li><a class="drawer__link " href="about.html">About</a></li>
+      <li class="drawer__group" data-drawer-group>
+        <button class="drawer__link drawer__link--toggle" type="button" aria-expanded="false">
+          Services
+          <svg class="drawer__chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9.5 6 6 6-6"/></svg>
+        </button>
+        <div class="drawer__sub">
+          <ul>
+            <li><a href="services.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8.5 4.5L12 12 3.5 7.5 12 3Z"/><path d="m3.5 12 8.5 4.5 8.5-4.5"/><path d="m3.5 16.5 8.5 4.5 8.5-4.5"/></svg><span>All services</span></a></li>
+            <li><a href="service-seo.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3.5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z"/><path d="m20.5 20.5-5-5"/><path d="M7.8 12.8v-2.1m2.7 2.1V8.9m2.7 3.9v-2.9"/></svg><span>SEO Services</span></a></li>
+            <li><a href="service-web-development.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="15.5" rx="2"/><path d="M2.5 8.5h19"/><path d="M5.6 6.3h.01M8 6.3h.01M10.4 6.3h.01"/><path d="M6 12.5h6.5M6 15.8h4"/><path d="m17.8 15.9 2.6-2.6-1.6-1.6-2.6 2.6-.4 2 2-.4Z"/></svg><span>Web Design & Development</span></a></li>
+            <li><a href="service-sem.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1"/><path d="m14.6 9.4 5.2-5.2M17 4.2h2.8V7"/></svg><span>SEM Services</span></a></li>
+            <li><a href="service-smm.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 10.9v8.2H4.4a1.1 1.1 0 0 1-1.1-1.1v-6a1.1 1.1 0 0 1 1.1-1.1h2.4Z"/><path d="m6.8 11.1 3.8-6.8a2 2 0 0 1 3 2l-1 3.7h5a2 2 0 0 1 2 2.4l-1.1 5a2 2 0 0 1-2 1.6H6.8"/></svg><span>SMM Services</span></a></li>
+            <li><a href="service-software-development.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m8.4 7.8-4.2 4.2 4.2 4.2"/><path d="m15.6 7.8 4.2 4.2-4.2 4.2"/><path d="m13.6 5.2-3.2 13.6"/></svg><span>Software Development</span></a></li>
+            <li><a href="service-ecommerce.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2h13.6l-1.1 10.2a2 2 0 0 1-2 1.8H8.3a2 2 0 0 1-2-1.8L5.2 8.2Z"/><path d="M8.9 8.2a3.1 3.1 0 0 1 6.2 0"/><path d="M9.6 11.6v1.2a2.4 2.4 0 0 0 4.8 0v-1.2"/></svg><span>Shopify & WordPress</span></a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a class="drawer__link is-active" href="portfolio.html">Portfolio</a></li>
+      <li><a class="drawer__link " href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="drawer__foot">
+    <a class="btn btn--primary btn--block" href="contact.html#consultation">Start a project</a>
+    <a class="drawer__contact" href="tel:+10000000000">
+      <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a2 2 0 0 1-2.2 2 19.4 19.4 0 0 1-8.5-3 19.2 19.2 0 0 1-5.9-5.9 19.4 19.4 0 0 1-3-8.6 2 2 0 0 1 2-2.2h2.8a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L7.6 9.8a15.8 15.8 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2.2Z"/></svg>
+      +1 (000) 000-0000
+    </a>
+    <a class="drawer__contact" href="mailto:contact@cestotechnologies.com">
+      <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6.3 9-6.3"/></svg>
+      contact@cestotechnologies.com
+    </a>
+  </div>
+</div>
+<div class="scrim" id="scrim"></div>
+
+
+<main id="main">
+<!-- ================= PAGE HERO ================= -->
+<section class="phero phero--overflow-visible">
+  <div class="shell phero__inner phero__inner--split" style="grid-template-columns:1fr 1.2fr">
+    <div class="phero__col">
+      <nav class="crumbs" aria-label="Breadcrumb" data-anim="fade">
+        <a href="index.html">Home</a><i>/</i>
+        <a href="portfolio.html">Portfolio</a><i>/</i>
+        <span aria-current="page">MHG Portal</span>
+      </nav>
+
+      <p class="eyebrow" data-anim="fade">Case Study — Custom Software</p>
+      <h1 class="h1 phero__title reveal-lines">
+        <span class="ln"><span>MHG Portal</span></span>
+        <span class="ln"><span class="chrome">Custom Letting Agency App</span></span>
+      </h1>
+      <p class="lede phero__lede" data-anim="up" data-delay="220">
+        A bespoke operations portal built for More Homes Group, replacing disconnected tools with a
+        single platform for landlord onboarding, property lifecycle management, sales tracking, tenant
+        records, an integrated SIP dialer suite, team chat, and full audit governance.
+      </p>
+
+      <ul class="tag-list tag-list--sm" data-anim="up" data-delay="260">
+        <li>Next.js 14</li><li>PostgreSQL</li><li>OTP Login</li><li>SIP Dialer</li><li>Role-Based</li><li>Audit Logs</li>
+      </ul>
+
+      <a class="btn btn--primary btn--lg" href="contact.html#consultation" data-anim="up" data-delay="300" style="margin-top:10px">
+        Build Your Portal
+        <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h15m-6.2-6.2L19.5 12l-6.2 6.2"/></svg>
+      </a>
+
+      <ul class="phero__meta" data-anim="up" data-delay="340">
+        <li><b>5</b><span>Core modules</span></li>
+        <li><b>Admin + Agent</b><span>User roles</span></li>
+        <li><b>SIP Integrated</b><span>Dialer suite</span></li>
+        <li><b>OTP + Audit</b><span>Security</span></li>
+      </ul>
+    </div>
+
+    <div class="phero__visual phero__visual--blend" data-anim="left" data-delay="180">
+      <a class="phero__visual-frame" href="https://www.hub.morehomesgroup.co.uk" target="_blank" rel="noopener noreferrer" aria-label="Open the MHG Portal website" style="display:block">
+        <img class="phero__visual-img" src="assets/img/mhg-portal-laptop.png" alt="MHG Portal sign-in screen on a laptop, reading 'Your Team's Lettings Command Centre'">
+      </a>
+      <p style="text-align:center;margin-top:18px"><span class="url-type" style="--len:28">www.hub.morehomesgroup.co.uk</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="section">
+  <div class="shell">
+    <header class="sec-head">
+      <div class="sec-head__top" data-anim="fade">
+        <span class="sec-head__n">01</span>
+        <span class="sec-head__label">Overview</span>
+        <span class="sec-head__line"></span>
+      </div>
+      <h2 class="h2" data-anim="up">One Platform to Run<br><span class="chrome">All Letting Operations.</span></h2>
+    </header>
+
+    <p class="lede" style="color:var(--chrome-300);max-width:820px" data-anim="up" data-delay="80">
+      More Homes Group needed a single platform to run day-to-day agency operations without switching
+      between disconnected tools. We built a centralised portal combining business workflows,
+      communication, and compliance in one system.
+    </p>
+
+    <div class="grid grid--3" style="margin-top:40px" data-stagger="90">
+      <article class="feature" data-anim="up">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></span>
+        <h3 class="feature__t">The Problem</h3>
+        <p class="feature__d">Fragmented tools, limited visibility, and weak communication flow between teams.</p>
+        <ul class="tag-list tag-list--sm" style="margin-top:14px">
+          <li>Records stored separately</li><li>Limited activity visibility</li><li>No dialer workflow</li><li>Weak login security</li>
+        </ul>
+      </article>
+      <article class="feature" data-anim="up" data-delay="70">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.6 4.4 4.4L19 7.4"/></svg></span>
+        <h3 class="feature__t">The Solution</h3>
+        <p class="feature__d">A centralised Next.js operations portal combining workflows, communication, and compliance.</p>
+        <ul class="tag-list tag-list--sm" style="margin-top:14px">
+          <li>Role-based architecture</li><li>OTP-protected login</li><li>Unified data model</li><li>Integrated dialer suite</li>
+        </ul>
+      </article>
+      <article class="feature" data-anim="up" data-delay="140">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 8 3.2v6c0 4.4-3.2 8.2-8 9.2-4.8-1-8-4.8-8-9.2V6l8-3.2Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg></span>
+        <h3 class="feature__t">Delivered Outcomes</h3>
+        <p class="feature__d">A fully operational letting portal serving admin and agent users from a single secure system.</p>
+        <ul class="tag-list tag-list--sm" style="margin-top:14px">
+          <li>Single source of truth</li><li>Faster admin oversight</li><li>Stronger security</li><li>Audit-ready</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CORE MODULES ================= -->
+<section class="section section--alt section--mesh">
+  <div class="shell">
+    <header class="sec-head">
+      <div class="sec-head__top" data-anim="fade">
+        <span class="sec-head__n">02</span>
+        <span class="sec-head__label">Core modules</span>
+        <span class="sec-head__line"></span>
+      </div>
+      <div class="sec-head__grid">
+        <h2 class="h2" data-anim="right">Every Part of the<br><span class="chrome">Portal, in Detail.</span></h2>
+        <p class="sec-head__lede" data-anim="left" data-delay="100">
+          The system is organised into five core modules, each handling a distinct area of the letting
+          business — from admin oversight and agent workflows through the dialer suite, team
+          communication, and revenue reporting.
+        </p>
+      </div>
+    </header>
+
+    <div class="grid grid--3 feature-grid--glow" style="margin-top:40px">
+      <article class="feature" data-anim="up" data-delay="0">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.4 19.4a5.6 5.6 0 0 1 11.2 0"/><circle cx="17.2" cy="8.6" r="2.5"/><path d="M16.2 13.8a4.9 4.9 0 0 1 4.4 5"/></svg></span>
+        <h3 class="feature__t">01 — Admin Control Center</h3>
+        <p class="feature__d">The admin-only hub for managing the entire platform — agents, commission structures, dialer domain settings, audit logs, and full portfolio visibility.</p>
+        <ul class="tag-list tag-list--sm">
+          <li>Agent account management</li><li>Commission configuration</li><li>Dialer domain settings</li>
+          <li>Platform-wide audit log</li><li>Full portfolio visibility</li><li>Role &amp; permission management</li>
+        </ul>
+      </article>
+      <article class="feature" data-anim="up" data-delay="70">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="15.5" rx="2"/><path d="M2.5 8.5h19"/><path d="M5.6 6.3h.01M8 6.3h.01M10.4 6.3h.01"/><path d="M6 12.5h6.5M6 15.8h4"/></svg></span>
+        <h3 class="feature__t">02 — Agent Workspace</h3>
+        <p class="feature__d">The day-to-day operational hub for agents — onboarding landlords, managing property lifecycles, closing sales, and maintaining tenant records.</p>
+        <ul class="tag-list tag-list--sm">
+          <li>Landlord onboarding</li><li>Property lifecycle tracking</li><li>Sales record management</li>
+          <li>Tenant record tracking</li><li>Assigned portfolio view</li><li>Commission &amp; payment status</li>
+        </ul>
+      </article>
+      <article class="feature" data-anim="up" data-delay="140">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a2 2 0 0 1-2.2 2 19.4 19.4 0 0 1-8.5-3 19.2 19.2 0 0 1-5.9-5.9 19.4 19.4 0 0 1-3-8.6 2 2 0 0 1 2-2.2h2.8a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L7.6 9.8a15.8 15.8 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2.2Z"/></svg></span>
+        <h3 class="feature__t">03 — Dialer Suite</h3>
+        <p class="feature__d">A fully integrated calling workflow built directly into the portal — SIP/LINKUS-ready, covering the complete calling experience from dial to post-call notes.</p>
+        <ul class="tag-list tag-list--sm">
+          <li>Live call status dialpad</li><li>Contacts management</li><li>Full call history</li>
+          <li>Intercalling (extension-to-extension)</li><li>Labels &amp; favourites</li><li>Recording URL support</li>
+        </ul>
+      </article>
+      <article class="feature" data-anim="up" data-delay="210">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8 10.9v8.2H4.4a1.1 1.1 0 0 1-1.1-1.1v-6a1.1 1.1 0 0 1 1.1-1.1h2.4Z"/><path d="m6.8 11.1 3.8-6.8a2 2 0 0 1 3 2l-1 3.7h5a2 2 0 0 1 2 2.4l-1.1 5a2 2 0 0 1-2 1.6H6.8"/></svg></span>
+        <h3 class="feature__t">04 — Team Communication</h3>
+        <p class="feature__d">An embedded chat system for fast internal coordination between users — no switching to external tools, keeping communication in context and on record.</p>
+        <ul class="tag-list tag-list--sm">
+          <li>Direct messaging</li><li>Real-time delivery</li><li>Conversation history</li>
+          <li>Presence &amp; online status</li><li>Unread indicators</li><li>Admin &amp; Agent access</li>
+        </ul>
+      </article>
+      <article class="feature" data-anim="up" data-delay="280">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c-1-3.5.5-8 4-11.5S17.5 3 20.5 3.5c.5 3-.5 8-4 11.5S8.5 20 5 19Z"/><path d="M9.5 14.5 5 19"/><circle cx="14.2" cy="9.8" r="1.9"/></svg></span>
+        <h3 class="feature__t">05 — Revenue &amp; Performance</h3>
+        <p class="feature__d">Sales and commission dashboards giving admins and agents clear visibility into financial performance and portfolio activity.</p>
+        <ul class="tag-list tag-list--sm">
+          <li>Sales dashboard</li><li>Commission dashboard</li><li>Revenue overview</li>
+          <li>Operational reporting</li><li>Agent performance summaries</li><li>Filterable date-range reporting</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE ================= -->
+<section class="section">
+  <div class="shell">
+    <header class="sec-head">
+      <div class="sec-head__top" data-anim="fade">
+        <span class="sec-head__n">03</span>
+        <span class="sec-head__label">Architecture</span>
+        <span class="sec-head__line"></span>
+      </div>
+      <h2 class="h2" data-anim="up">Built on a Modern<br><span class="chrome">Full-Stack Foundation.</span></h2>
+    </header>
+
+    <ul class="tag-list" style="margin:28px 0 40px" data-anim="up" data-delay="80">
+      <li>Next.js 14</li><li>React 18</li><li>TypeScript</li><li>Prisma ORM</li>
+      <li>PostgreSQL</li><li>Zod</li><li>SIP.js</li><li>Vercel / Docker</li>
+    </ul>
+
+    <div class="grid grid--2" data-stagger="90">
+      <article class="feature" data-anim="up">
+        <h3 class="feature__t">Next.js 14 + React 18</h3>
+        <p class="feature__d">App Router with server and client components, TypeScript throughout, Server Actions for mutations, and a Vercel-ready deployment.</p>
+      </article>
+      <article class="feature" data-anim="up" data-delay="70">
+        <h3 class="feature__t">Prisma ORM + PostgreSQL</h3>
+        <p class="feature__d">A type-safe ORM over PostgreSQL with a clean unified data model, migration management via Prisma Migrate, and Zod validation.</p>
+      </article>
+      <article class="feature" data-anim="up" data-delay="140">
+        <h3 class="feature__t">SIP.js Dialer</h3>
+        <p class="feature__d">Browser-based calling via SIP.js, LINKUS-ready architecture for enterprise PBX, live call status, and extension-to-extension intercalling.</p>
+      </article>
+      <article class="feature" data-anim="up" data-delay="210">
+        <h3 class="feature__t">Security &amp; Authentication</h3>
+        <p class="feature__d">OTP-based login with expiry and rate limiting, secure server-side sessions, and a two-tier role model with route protection and audit logs.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCREENSHOTS ================= -->
+<section class="section section--alt section--mesh">
+  <div class="shell">
+    <header class="sec-head">
+      <div class="sec-head__top" data-anim="fade">
+        <span class="sec-head__n">04</span>
+        <span class="sec-head__label">Screenshots</span>
+        <span class="sec-head__line"></span>
+      </div>
+      <h2 class="h2" data-anim="up">See the Portal<br><span class="chrome">in Action.</span></h2>
+    </header>
+
+    <!-- TODO: replace each placeholder panel below with the matching screenshot -->
+    <div class="grid grid--3" style="margin-top:40px" data-stagger="80">
+      <figure class="shot" data-anim="up">
+        <div class="shot__frame shot__frame--img"><img src="assets/img/mhg-shot-admin-dashboard.png" alt="MHG Portal admin dashboard showing sales overview, financial breakdown, and platform totals"></div>
+        <figcaption><h3>Admin Control Center</h3><p>Agent management, commission config, dialer domain settings, and audit log overview.</p></figcaption>
+      </figure>
+      <figure class="shot" data-anim="up" data-delay="60">
+        <div class="shot__frame shot__frame--img"><img src="assets/img/mhg-shot-agent-workspace.png" alt="MHG Portal agent workspace showing the landlord onboarding and property creation form"></div>
+        <figcaption><h3>Agent Workspace — Property Lifecycle</h3><p>Landlord onboarding, property status tracking, and sales records.</p></figcaption>
+      </figure>
+      <figure class="shot" data-anim="up" data-delay="120">
+        <div class="shot__frame shot__frame--img"><img src="assets/img/mhg-shot-dialpad.png" alt="MHG Portal dialer suite showing recent calls, the premium dialpad, and dialer connection status"></div>
+        <figcaption><h3>Dialer Suite — Dialpad &amp; Call History</h3><p>Live-status dialpad, call history log, contacts list, and intercalling interface.</p></figcaption>
+      </figure>
+      <figure class="shot" data-anim="up" data-delay="180">
+        <div class="shot__frame shot__frame--img"><img src="assets/img/mhg-shot-labels-notes.png" alt="MHG Portal contacts screen showing the add-contact form, label creation, and saved contacts list"></div>
+        <figcaption><h3>Dialer — Labels, Notes &amp; Recordings</h3><p>Call labelling, per-call notes, favourites, and recording URL management.</p></figcaption>
+      </figure>
+      <figure class="shot" data-anim="up" data-delay="240">
+        <div class="shot__frame shot__frame--img"><img src="assets/img/mhg-shot-team-chat.png" alt="MHG Portal embedded messages panel showing admin and agent conversation list"></div>
+        <figcaption><h3>Team Communication</h3><p>In-portal direct messaging between admin and agent users with conversation history.</p></figcaption>
+      </figure>
+      <figure class="shot" data-anim="up" data-delay="300">
+        <div class="shot__frame shot__frame--img"><img src="assets/img/mhg-shot-revenue-dashboard.png" alt="MHG Portal admin dashboard showing sales overview and financial breakdown with revenue, profit, and commission figures"></div>
+        <figcaption><h3>Revenue &amp; Commission Dashboard</h3><p>Sales and commission overview with deal volumes and agent performance.</p></figcaption>
+      </figure>
+      <figure class="shot" data-anim="up" data-delay="360">
+        <div class="shot__frame shot__frame--img"><img src="assets/img/mhg-shot-otp-login.png" alt="MHG Portal OTP verification screen asking for a one-time code sent to the user's email"></div>
+        <figcaption><h3>OTP Login &amp; Authentication</h3><p>Secure OTP-protected login flow with rate limiting and session management.</p></figcaption>
+      </figure>
+      <figure class="shot" data-anim="up" data-delay="420">
+        <div class="shot__frame shot__frame--img"><img src="assets/img/mhg-shot-audit-log.png" alt="MHG Portal audit logs screen showing filterable audit records with timestamps, actions, and before/after values"></div>
+        <figcaption><h3>Audit Log — Platform Governance</h3><p>Admin-accessible audit trail showing all user actions and record changes.</p></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IMPACT ================= -->
+<section class="section">
+  <div class="shell">
+    <header class="sec-head sec-head--center">
+      <div class="sec-head__top" data-anim="fade">
+        <span class="sec-head__n">05</span>
+        <span class="sec-head__label">Impact</span>
+      </div>
+      <h2 class="h2" data-anim="up">One Portal, Zero Friction,<br><span class="chrome">Full Control.</span></h2>
+      <p class="sec-head__lede" data-anim="up" data-delay="80">
+        The MHG portal replaced fragmented, disconnected tools with a single secure platform — delivering
+        faster operations, stronger security, and better agent productivity across every letting workflow.
+      </p>
+    </header>
+
+    <ul class="stats" data-anim="up" data-delay="140" style="margin-top:22px">
+      <li><b>Centralised</b><span>Operations</span></li>
+      <li><b>Integrated</b><span>Dialer</span></li>
+      <li><b>OTP + Audit</b><span>Security</span></li>
+      <li><b>Dashboarded</b><span>Revenue</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="section section--alt section--mesh">
+  <div class="shell">
+    <header class="sec-head sec-head--center">
+      <div class="sec-head__top" data-anim="fade">
+        <span class="sec-head__label">Why choose us</span>
+      </div>
+      <h2 class="h2" data-anim="up">Results-Driven<br><span class="chrome">Solutions.</span></h2>
+    </header>
+
+    <div class="grid grid--3" style="margin-top:36px" data-stagger="90">
+      <article class="feature" data-anim="up">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 8 3.2v6c0 4.4-3.2 8.2-8 9.2-4.8-1-8-4.8-8-9.2V6l8-3.2Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg></span>
+        <h3 class="feature__t">Fast Delivery</h3>
+        <p class="feature__d">Quick execution with clean approvals at every stage.</p>
+      </article>
+      <article class="feature" data-anim="up" data-delay="70">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c-1-3.5.5-8 4-11.5S17.5 3 20.5 3.5c.5 3-.5 8-4 11.5S8.5 20 5 19Z"/><path d="M9.5 14.5 5 19"/><circle cx="14.2" cy="9.8" r="1.9"/></svg></span>
+        <h3 class="feature__t">Performance Focus</h3>
+        <p class="feature__d">Every solution optimized for growth, not just launch day.</p>
+      </article>
+      <article class="feature" data-anim="up" data-delay="140">
+        <span class="feature__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.4h6M10 20.4h4"/><path d="M12 3a6.2 6.2 0 0 1 3.7 11.2c-.6.4-.9 1-.9 1.7H9.2c0-.7-.3-1.3-.9-1.7A6.2 6.2 0 0 1 12 3Z"/></svg></span>
+        <h3 class="feature__t">Always Innovating</h3>
+        <p class="feature__d">Cutting-edge solutions built around modern needs.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="lightbox" aria-hidden="true">
+  <button class="lightbox__close" type="button" aria-label="Close image">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+  </button>
+  <img class="lightbox__img" src="" alt="">
+</div>
+
+<footer class="footer">
+  <!-- pre-footer call to action -->
+  <section class="cta-band cta-band--live">
+    <div class="shell cta-band__inner">
+      <div class="cta-band__copy" data-anim="right">
+        <p class="eyebrow">Next step</p>
+        <h2 class="cta-band__title">Want a Similar Portal<br>Built for Your Agency?</h2>
+        <p class="cta-band__lede">Next.js 14 · React 18 · TypeScript · Prisma ORM · PostgreSQL · Zod · SIP.js · OTP Auth · Audit Logs</p>
+      </div>
+      <div class="cta-band__actions" data-anim="left" data-delay="120">
+        <a class="btn btn--primary btn--lg" href="contact.html#consultation">
+          Build Your Portal
+          <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h15m-6.2-6.2L19.5 12l-6.2 6.2"/></svg>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="tel:+10000000000">
+          <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a2 2 0 0 1-2.2 2 19.4 19.4 0 0 1-8.5-3 19.2 19.2 0 0 1-5.9-5.9 19.4 19.4 0 0 1-3-8.6 2 2 0 0 1 2-2.2h2.8a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L7.6 9.8a15.8 15.8 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2.2Z"/></svg>
+          +1 (000) 000-0000
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer__main">
+    <div class="shell footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="index.html" aria-label="Cesto Technologies — home">
+          <img class="logo__img logo__img--footer" src="assets/img/logo-footer.png" alt="Cesto Technologies">
+        </a>
+        <p class="footer__pitch">One partner for search, web, paid media and software. We take on the work that moves a number, and we report on it honestly.</p>
+
+        <ul class="footer__contact">
+          <li>
+            <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.2s7-5.6 7-11.1a7 7 0 1 0-14 0c0 5.5 7 11.1 7 11.1Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <span>Remote-first · Serving clients worldwide</span>
+          </li>
+          <li>
+            <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6.3 9-6.3"/></svg>
+            <a href="mailto:contact@cestotechnologies.com">contact@cestotechnologies.com</a>
+          </li>
+          <li>
+            <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 16.9v2.8a2 2 0 0 1-2.2 2 19.4 19.4 0 0 1-8.5-3 19.2 19.2 0 0 1-5.9-5.9 19.4 19.4 0 0 1-3-8.6 2 2 0 0 1 2-2.2h2.8a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L7.6 9.8a15.8 15.8 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.8 2.2Z"/></svg>
+            <a href="tel:+10000000000">+1 (000) 000-0000</a>
+          </li>
+          <li>
+            <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.2V12l3.2 1.9"/></svg>
+            <span>Mon–Fri, 09:00–18:00</span>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="footer__col" aria-label="Services">
+        <h3 class="footer__h">Services</h3>
+        <ul class="footer__links">
+          <li><a href="service-google-map-optimization.html">SEO Services</a></li>
+          <li><a href="service-wordpress.html">Web Design & Development</a></li>
+          <li><a href="service-google-ads.html">SEM Services</a></li>
+          <li><a href="service-social-media-marketing.html">SMM Services</a></li>
+          <li><a href="service-app-development.html">Software Development</a></li>
+          <li><a href="service-web-development.html">Shopify & WordPress</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-label="Company">
+        <h3 class="footer__h">Company</h3>
+        <ul class="footer__links">
+          <li><a href="about.html">About us</a></li>
+          <li><a href="about.html#approach">Our approach</a></li>
+          <li><a href="about.html#values">Values</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html#faq">FAQs</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col footer__col--wide">
+        <h3 class="footer__h">Get the monthly brief</h3>
+        <p class="footer__note">One email a month — what changed in search and paid media, and what it means for a business your size. No pitch.</p>
+
+        <form class="subscribe" id="subscribe" novalidate>
+          <div class="subscribe__row">
+            <label class="u-visually-hidden" for="subEmail">Email address</label>
+            <input type="email" id="subEmail" name="email" placeholder="you@company.com" autocomplete="email" required>
+            <button type="submit" aria-label="Subscribe">
+              <svg class="ico ico--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h15m-6.2-6.2L19.5 12l-6.2 6.2"/></svg>
+            </button>
+          </div>
+          <p class="subscribe__msg" id="subMsg" role="status"></p>
+        </form>
+
+        <ul class="footer__social">
+          <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" class="ico ico--fill" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-4V9Z"/></svg></a></li>
+          <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24" class="ico ico--fill" aria-hidden="true"><path d="M18.2 2H21l-6.6 7.6L22 22h-6.2l-4.8-6.3L5.4 22H2.6l7-8.1L2 2h6.3l4.4 5.8L18.2 2Zm-1 18h1.7L7.9 3.7H6.1L17.2 20Z"/></svg></a></li>
+          <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" class="ico ico--fill" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.9C2.4 4 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2Zm0 4.9a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8Zm0 8a3.2 3.2 0 1 1 0-6.3 3.2 3.2 0 0 1 0 6.3Zm5.1-9.3a1.15 1.15 0 1 0 0 2.3 1.15 1.15 0 0 0 0-2.3Z"/></svg></a></li>
+          <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" class="ico ico--fill" aria-hidden="true"><path d="M13 22v-8h2.7l.4-3H13V9c0-.9.3-1.5 1.6-1.5H16V4.8c-.3 0-1.2-.1-2.3-.1-2.3 0-3.7 1.3-3.7 3.9V11H7.5v3H10v8h3Z"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="shell footer__bottom-row">
+      <p class="footer__copy">© 2026 <a href="contact.html#consultation">Cesto Technologies</a>. All rights reserved.</p>
+      <ul class="footer__legal">
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.5v-15m-6.5 6.5L12 4.5l6.5 6.5"/></svg>
+</button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

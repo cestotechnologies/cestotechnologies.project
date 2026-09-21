@@ -1,0 +1,15 @@
+{
+  "name": "cesto-technologies-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketing website for Cesto Technologies — static multi-page build with no runtime dependencies.",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "serve": "node build.js && python -m http.server 5178",
+    "start": "npm run watch"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
